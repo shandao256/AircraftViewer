@@ -1,8 +1,6 @@
 # AircraftViewer
-A Flight tracker from a Java project i've done in college.
 
-### Images 
+<img width="2559" height="1281" alt="image" src="https://github.com/user-attachments/assets/0625b318-30f3-42cc-a995-3714ec312cae" />
 
-<img width="1199" height="720" alt="image" src="https://github.com/user-attachments/assets/2b0f3571-627d-4199-a5cf-a557cc1e61fc" />
-<img width="847" height="392" alt="image" src="https://github.com/user-attachments/assets/f3331a17-6e40-4d6e-9866-5d09b0fe5083" />
-
+A C# Flight tracker based on a Java project i've done in college. Collects ADS-B data and flight information from the OpenSky network.
+The Project is still ongoing.
