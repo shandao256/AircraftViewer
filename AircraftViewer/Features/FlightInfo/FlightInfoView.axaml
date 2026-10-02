@@ -1,0 +1,64 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:AircraftViewer.Features.FlightInfo"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="380" d:DesignHeight="420"
+             x:Class="AircraftViewer.Features.FlightInfo.FlightInfoView"
+             x:DataType="vm:FlightInfoViewModel">
+
+    <Border IsVisible="{Binding HasSelection}"
+            Background="{StaticResource BackgroundBlurBrush}"
+            CornerRadius="8"
+            Width="380"
+            ClipToBounds="True">
+
+        <StackPanel>
+
+            <!-- Aircraft photo -->
+            <Image Source="avares://AircraftViewer/Assets/Images/Aircraft-plain.jpg"
+                   Height="200"
+                   Stretch="UniformToFill" />
+
+            <!-- Stats block -->
+            <StackPanel Margin="20,16" Spacing="12">
+
+                <TextBlock Text="{Binding SelectedAircraft.Callsign}"
+                           FontSize="{StaticResource FontSizeHeader2}"
+                           FontWeight="SemiBold" />
+
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="Auto,Auto,Auto,Auto" Margin="0,8,0,0">
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Speed"
+                               Foreground="{StaticResource GrayedTextBrush}" />
+                    <TextBlock Grid.Row="0" Grid.Column="1" Margin="0,0,0,8">
+                        <Run Text="{Binding SelectedAircraft.Speed, StringFormat={}{0:0.0}}" />
+                        <Run Text=" kts" />
+                    </TextBlock>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Track"
+                               Foreground="{StaticResource GrayedTextBrush}" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Margin="0,0,0,8">
+                        <Run Text="{Binding SelectedAircraft.Trak, StringFormat={}{0:0.0}}" />
+                        <Run Text="°" />
+                    </TextBlock>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Latitude"
+                               Foreground="{StaticResource GrayedTextBrush}" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" Margin="0,0,0,8"
+                               Text="{Binding SelectedAircraft.Latitude, StringFormat={}{0:0.0000}}" />
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Longitude"
+                               Foreground="{StaticResource GrayedTextBrush}" />
+                    <TextBlock Grid.Row="3" Grid.Column="1"
+                               Text="{Binding SelectedAircraft.Longitude, StringFormat={}{0:0.0000}}" />
+
+                </Grid>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Border>
+
+</UserControl>  

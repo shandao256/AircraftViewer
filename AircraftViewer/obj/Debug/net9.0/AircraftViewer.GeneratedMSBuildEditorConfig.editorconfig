@@ -24,5 +24,11 @@ build_property.EnableCodeStyleSeverity =
 [C:/Users/bindo/RiderProjects/AircraftViewer/AircraftViewer/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/bindo/RiderProjects/AircraftViewer/AircraftViewer/Views/MainWindow.axaml]
+[C:/Users/bindo/RiderProjects/AircraftViewer/AircraftViewer/Features/FlightInfo/FlightInfoView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/bindo/RiderProjects/AircraftViewer/AircraftViewer/Features/MainShell/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/bindo/RiderProjects/AircraftViewer/AircraftViewer/Features/MapView/MapView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

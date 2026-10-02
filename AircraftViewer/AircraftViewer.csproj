@@ -1,4 +1,4 @@
-﻿    <Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net9.0</TargetFramework>
@@ -8,7 +8,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <AvaloniaResource Include="Assets\**" />
+        <AvaloniaResource Include="Assets\**" Exclude="Assets\AircraftIcons\**;Assets\AircraftDb\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- Aircraft type SVGs: embedded as standard .NET resources so
+             Mapsui's "embedded://" image scheme can find them at runtime.
+             Resource names become AircraftViewer.Assets.AircraftIcons.<Name>.svg -->
+        <EmbeddedResource Include="Assets\AircraftIcons\**\*.svg" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- OpenSky aircraft DB CSV (icao24 -> typecode), read at runtime
+             by AircraftTypeLookup from AppContext.BaseDirectory. -->
+        <None Include="Assets\AircraftDb\aircraftDatabase.csv"
+              CopyToOutputDirectory="PreserveNewest"
+              Condition="Exists('Assets\AircraftDb\aircraftDatabase.csv')" />
     </ItemGroup>
 
     <ItemGroup>
@@ -25,5 +40,14 @@
         <PackageReference Include="Mapsui.Avalonia" Version="5.0.0"/>
         <PackageReference Include="HarfBuzzSharp" Version="8.3.1.2"/>
         <PackageReference Include="HarfBuzzSharp.NativeAssets.WebAssembly" Version="8.3.1.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Infrastructure\Settings\" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="credentials.json"
+              CopyToOutputDirectory="PreserveNewest"
+              Condition="Exists('credentials.json')" />
     </ItemGroup>
 </Project>

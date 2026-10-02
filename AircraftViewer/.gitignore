@@ -1,0 +1,8 @@
+credentials.json
+
+AircraftViewer/Assets/AircraftDb/aircraftDatabase.csv
+
+# NET Output
+bin/
+obj/
+

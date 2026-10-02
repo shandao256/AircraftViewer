@@ -4,6 +4,12 @@
     <option name="projectPerEditor">
       <map>
         <entry key="AircraftViewer/App.axaml" value="AircraftViewer/AircraftViewer.csproj" />
+        <entry key="AircraftViewer/Features/FlightInfo/FlightInfoView.axaml" value="AircraftViewer/AircraftViewer.csproj" />
+        <entry key="AircraftViewer/Features/FlightInfo/FlightInfoViewModel.axaml" value="AircraftViewer/AircraftViewer.csproj" />
+        <entry key="AircraftViewer/Features/MainShell/MainWindow.axaml" value="AircraftViewer/AircraftViewer.csproj" />
+        <entry key="AircraftViewer/Features/MainShell/MainWindowViewModel.axaml" value="AircraftViewer/AircraftViewer.csproj" />
+        <entry key="AircraftViewer/Features/MainShell/MainWindowViewModel.axaml.cs.axaml" value="AircraftViewer/AircraftViewer.csproj" />
+        <entry key="AircraftViewer/Features/MapView/MapView.axaml" value="AircraftViewer/AircraftViewer.csproj" />
         <entry key="AircraftViewer/Views/MainWindow.axaml" value="AircraftViewer/AircraftViewer.csproj" />
       </map>
     </option>

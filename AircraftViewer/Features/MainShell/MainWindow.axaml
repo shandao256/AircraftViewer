@@ -1,0 +1,45 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AircraftViewer.Features.MainShell"
+        xmlns:mapView="using:AircraftViewer.Features.MapView"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:flightInfo="clr-namespace:AircraftViewer.Features.FlightInfo"
+        mc:Ignorable="d" d:DesignWidth="1440" d:DesignHeight="1024"
+        x:Class="AircraftViewer.Features.MainShell.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AircraftViewer"
+        Width="1440" Height="1024">
+
+    <Panel>
+
+        <!-- Base layer: the map fills the whole window -->
+        <mapView:MapView DataContext="{Binding Map}" />
+
+        <!-- Overlay: app title badge, top-left -->
+        <Border Background="{StaticResource BackgroundBlurBrush}"
+                CornerRadius="8"
+                Padding="20,16"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="24">
+            <StackPanel Spacing="2">
+                <TextBlock Text="Aircraft Viewer"
+                           FontSize="{StaticResource FontSizeHeader2}"
+                           FontWeight="SemiBold" />
+                <TextBlock Text="1.0"
+                           FontSize="{StaticResource FontSizeCaption}"
+                           Foreground="{StaticResource GrayedTextBrush}" />
+            </StackPanel>
+        </Border>
+
+        <!-- Overlay: flight info card, bottom-right — placeholder until FlightInfoView exists -->
+        <flightInfo:FlightInfoView DataContext="{Binding FlightInfo}"
+                                       HorizontalAlignment="Right"
+                                       VerticalAlignment="Bottom"
+                                       Margin="24" />
+
+    </Panel>
+
+</Window>
